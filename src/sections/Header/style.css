@@ -1,0 +1,17 @@
+header {
+    background-color: rgb(85, 85, 148);
+    padding: 40px 0;
+}
+
+.navs {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+
+
+.navs ul li {
+    display: inline-block; 
+    margin-left: 16px;   
+}
