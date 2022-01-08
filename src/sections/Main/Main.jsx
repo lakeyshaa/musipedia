@@ -6,6 +6,8 @@ import Artist from '../../components/Artist';
 import { Routes, Route } from "react-router-dom";
 import Home from '../../Routes/Home';
 import Search from '../../Routes/Search';
+import Favorites from '../../Routes/Favorites';
+
 // import Search from '../../components/Search';
 
 // const ARTIST_API_URL = "https://api.napster.com/v2.2/?apikey=OTNhNGE5ZmUtNzRlMC00OTMyLTgxODEtMDc2NGVkYmRjMzMy"
@@ -48,6 +50,7 @@ const Main = searchValue => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/search" element={<Search />} />
+        <Route path='/favorites' element={<Favorites />} />
         {/* <Route path="home" element={<App />} />
         <Route path="artistinfo" element={<ArtistInfo />} />
         <Route path="favorites" element={<Favorites />} /> */}
