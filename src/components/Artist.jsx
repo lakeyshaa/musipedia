@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 const DEFAULT_PLACEHOLDER_IMAGE =
-  "https://m.media-amazon.com/images/I/61IeCixjIZL._SL1002_.jpg"
-
+"https://reactnativecode.com/wp-content/uploads/2018/02/Default_Image_Thumbnail.png"
 const Artist = ({ artist }) => {
 
   const [image, setImage] = useState("")
@@ -16,8 +15,6 @@ const Artist = ({ artist }) => {
     })
   }, [artist])
 
-
- 
   return (
     <div className="artist">
       <h2>{artist.name}</h2>
@@ -31,6 +28,5 @@ const Artist = ({ artist }) => {
     </div>
   );
 };
-
 
 export default Artist;
