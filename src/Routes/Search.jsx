@@ -2,6 +2,9 @@ import React, { useState } from "react";
 
 
 const Search = (props) => {
+  const [artists, setArtists] = useState([]);
+  const [errorMessage, setErrorMessage] = useState(null);
+  const [loading, setLoading] = useState(true);
   const [searchValue, setSearchValue] = useState("");
   
   const handleSearchInputChanges = (e) => {
@@ -12,11 +15,21 @@ const Search = (props) => {
     setSearchValue("")
   }
 
-  const callSearchFunction = (e) => {
+  const handleSearch = (e) => {
     e.preventDefault();
-    // TODO connect search to Redux
-    console.log('need to hook this up');
+    fetch(`https://api.napster.com/v2.2/search?query=${searchValue}&type=artist&apikey=OTNhNGE5ZmUtNzRlMC00OTMyLTgxODEtMDc2NGVkYmRjMzMy`)
+      .then(response => response.json())
+      .then(jsonResponse => {
+        if (jsonResponse.search) {
+          setArtists(jsonResponse.search.data.artists);
+          console.log(artists);
+        } else {
+          setErrorMessage(jsonResponse.Error);
+        }
+        setLoading(false);
+    });
   }
+
   return (
       <form className="search">
         <input
@@ -24,7 +37,7 @@ const Search = (props) => {
           onChange={handleSearchInputChanges}
           type="text"
         />
-        <input onClick={callSearchFunction} type="submit" value="SEARCH" />
+        <input onClick={handleSearch} type="submit" value="SEARCH" />
       </form>
     );
 }
