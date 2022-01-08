@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import Artists from "../components/Artists";
 
 const Search = (props) => {
   const [artists, setArtists] = useState([]);
@@ -22,7 +22,6 @@ const Search = (props) => {
       .then(jsonResponse => {
         if (jsonResponse.search) {
           setArtists(jsonResponse.search.data.artists);
-          console.log(artists);
         } else {
           setErrorMessage(jsonResponse.Error);
         }
@@ -31,6 +30,7 @@ const Search = (props) => {
   }
 
   return (
+    <>
       <form className="search">
         <input
           value={searchValue}
@@ -39,7 +39,11 @@ const Search = (props) => {
         />
         <input onClick={handleSearch} type="submit" value="SEARCH" />
       </form>
-    );
+      {artists && (
+        <Artists artists={artists} />
+      )}
+    </>
+  );
 }
 
   
