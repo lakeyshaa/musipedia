@@ -17,7 +17,7 @@ const Search = (props) => {
 
   const handleSearch = (e) => {
     e.preventDefault();
-    fetch(`https://api.napster.com/v2.2/search?query=${searchValue}&type=artist&apikey=OTNhNGE5ZmUtNzRlMC00OTMyLTgxODEtMDc2NGVkYmRjMzMy`)
+    fetch(`https://api.napster.com/v2.2/search?query=${searchValue}&type=artist&apikey=OTNhNGE5ZmUtNzRlMC00OTMyLTgxODEtMDc2NGVkYmRjMzMyx`)
       .then(response => response.json())
       .then(jsonResponse => {
         if (jsonResponse.search) {
@@ -41,6 +41,12 @@ const Search = (props) => {
       </form>
       {artists && (
         <Artists artists={artists} />
+      )}
+      {errorMessage && (
+        errorMessage
+      )}
+      { loading && (
+         loading
       )}
     </>
   );
