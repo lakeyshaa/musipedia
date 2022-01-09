@@ -10,15 +10,15 @@ import reducer from './reducers/reducer'
 import {connect} from 'react-redux'
 import { render } from "@testing-library/react";
 
-class App extends Component {
-  render() {
-    return (
-      <div>
-      <h1>Redux Testing</h1>
-      </div>
-    );
-  }
-}
+// //class App extends Component {
+//   render() {
+//     return (
+//       <div>
+//       <h1>Redux Testing</h1>
+//       </div>
+//     );
+//   }
+// }
 
 const store = createStore(
   reducer
