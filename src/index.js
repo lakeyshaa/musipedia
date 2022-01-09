@@ -4,13 +4,34 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
+import {Provider} from 'react-redux'
+import {createStore} from 'redux'
+import reducer from './reducers/reducer'
+import {connect} from 'react-redux'
+import { render } from "@testing-library/react";
+
+class App extends Component {
+  render() {
+    return (
+      <div>
+      <h1>Redux Testing</h1>
+      </div>
+    );
+  }
+}
+
+const store = createStore(
+  reducer
+)
 
 ReactDOM.render(
+  <Provider store={store}>
   <React.StrictMode>
     <BrowserRouter>
       <App />
     </BrowserRouter>
-  </React.StrictMode>,
+  </React.StrictMode>
+  </Provider>,
   document.getElementById("root")
 );
 
@@ -18,3 +39,5 @@ ReactDOM.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+
+export default connect()(App)
