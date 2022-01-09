@@ -18,7 +18,7 @@ const Search = (props) => {
   const handleSearch = (e) => {
     e.preventDefault();
     setLoading(true);
-    fetch(`https://api.napster.com/v2.2/search?query=${searchValue}&type=artist&apikey=OTNhNGE5ZmUtNzRlMC00OTMyLTgxODEtMDc2NGVkYmRjMzMyx`)
+    fetch(`https://api.napster.com/v2.2/search?query=${searchValue}&type=artist&apikey=OTNhNGE5ZmUtNzRlMC00OTMyLTgxODEtMDc2NGVkYmRjMzMy`)
       .then(response => response.json())
       .then(jsonResponse => {
         if (jsonResponse.search) {
