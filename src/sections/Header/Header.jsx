@@ -5,22 +5,16 @@ import './style.css';
 function Header(props) {
     return (
         <header>
-            <div className="y-wrap">
+          <div className="y-wrap">
             <nav className="navs">   
-                    <h2>{props.text}</h2>
-                    <ul>
-                    <li>
-                      <NavLink to="./">Home</NavLink>
-                      </li>
-                    <li>
-                      <NavLink to="/Events.jsx">Events</NavLink>
-                      </li>
-                    <li>
-                    <NavLink to="/Login">Meet the Dev</NavLink>
-                  </li>
-                </ul>
-                </nav>
-                </div>
+              <h2>{props.text}</h2>
+              <ul>
+                <li><NavLink to="/">Home</NavLink></li>
+                <li><NavLink to="/search">Search</NavLink></li>
+                <li><NavLink to="/favorites">Favorites</NavLink></li>
+              </ul>
+            </nav>
+          </div>
         </header>
     );
   }

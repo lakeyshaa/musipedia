@@ -1,3 +1,12 @@
+const Favorites = () => {
+    return (
+      <p>I am Favorites!</p>
+    );
+  };
+  
+  export default Favorites;
+
+
 /*import Artist from "../components/Artist";
 import React, { useState } from "react";
 
